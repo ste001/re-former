@@ -1,4 +1,4 @@
-<!--
+<!-- The HTML form
 <form action='/users' method='post' accept-charset="UTF-8">
   <label for='user[username]'>Username</label>
   <input name='user[username]' type='text'>
@@ -11,6 +11,7 @@
 </form>
 -->
 
+<!-- The form_tag form
 <%= form_tag('/users') do |f|%>
   <%= label_tag 'username' %>
   <%= text_field_tag 'username' %>
@@ -19,4 +20,15 @@
   <%= label_tag 'password' %>
   <%= password_field_tag 'password' %>
   <%= submit_tag %>
+<% end %>
+-->
+
+<%= form_for @user do |u|%>
+  <%= u.label :username %>
+  <%= u.text_field :username %>
+  <%= u.label :email %>
+  <%= u.email_field :email %>
+  <%= u.label :password %>
+  <%= u.password_field :password %>
+  <%= u.submit %>
 <% end %>
