@@ -1,0 +1,9 @@
+<%= form_for @user, method: :patch do |u|%>
+  <%= u.label :username %>
+  <%= u.text_field :username %>
+  <%= u.label :email %>
+  <%= u.email_field :email %>
+  <%= u.label :password %>
+  <%= u.password_field :password %>
+  <%= u.submit %>
+<% end %>
